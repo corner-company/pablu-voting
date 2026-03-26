@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PABLU - Vielen Dank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Grunddesign & Schriften */
         body {
@@ -29,12 +30,17 @@
 
         .logo {
             height: 40px; /* Skaliert das Logo passend zur Navigationsleiste */
+            display: block; /* Verhindert kleine Abstände unten */
         }
 
         /* Hauptinhalt */
         .content {
             text-align: center;
             padding: 0 20px;
+            flex: 1; /* Sorgt dafür, dass der Inhalt den Raum füllt */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Zentriert den Dankestext vertikal */
         }
 
         h1 {
@@ -52,31 +58,48 @@
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 1px;
+            margin-bottom: 50px; /* Platz nach unten zu den Socials */
         }
 
-        /* Button-Stil passend zu "Tickets Kaufen" */
-        .btn-back {
-            display: inline-block;
-            margin-top: 40px;
-            background-color: #A51D29;
-            color: white;
-            text-decoration: none;
-            padding: 12px 30px;
-            font-style: italic;
-            font-weight: bold;
+        /* Social Media Sektion */
+        .social-container {
+            margin-top: auto; /* Schiebt die Socials tendenziell nach unten */
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .social-text {
+            color: #333;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            border-radius: 4px;
-            transition: opacity 0.2s;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
-        .btn-back:hover {
-            opacity: 0.9;
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Abstand zwischen den Icons */
+        }
+
+        .social-icons a {
+            color: #333; /* Icons sind standardmäßig schwarz */
+            font-size: 2rem; /* Größe der Icons */
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        /* Hover-Effekt: Icons werden rot */
+        .social-icons a:hover {
+            color: #A51D29;
         }
 
         /* Responsivität für Mobilgeräte */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             header { margin-bottom: 40px; }
+            .social-icons a { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -90,7 +113,20 @@
         <h1>Vielen Dank für deine Stimme!</h1>
         <p class="subtext">Deine Auswahl wurde erfolgreich übermittelt.</p>
        
-        <a href="/" class="btn-back">Zurück zur Startseite</a>
+        <div class="social-container">
+            <p class="social-text">Folge PABLU</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/pabluuuser/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://open.spotify.com/intl-de/artist/3a7QAPvMYydT1dhUzapIv3" target="_blank" title="Spotify">
+                    <i class="fab fa-spotify"></i>
+                </a>
+                <a href="https://www.tiktok.com/@pabluuuser" target="_blank" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
     </div>
 
 </body>
